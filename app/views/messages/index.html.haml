@@ -1,0 +1,28 @@
+.wrapper
+  = render "shared/side_bar"
+
+  .chat-main
+    .header
+      .left-header
+        .left-header__title
+          = "sample"
+        %ul.left-header__members
+          Member : 
+          %li.member
+            = "sao neko"
+      .right-header
+        .right-header__btn
+          = "Edit"
+
+    .body
+      = render "messages"
+
+    .form
+      .form-field
+        %ul.form__message
+          %li.list
+            = link_to do
+              = fa_icon 'image', class: 'icon'
+      .form-submit
+        .form-submit__btn
+          = "Send"
