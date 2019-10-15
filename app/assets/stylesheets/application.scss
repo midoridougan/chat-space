@@ -1,7 +1,9 @@
- @import "font-awesome";
- @import "config/variable";
- @import "config/reset";
- @import "mixins/vender_prefix";
- @import "modules/side-bar";
- @import "modules/chat";
- @import "messages/messages";
+@import "config/variable";
+@import "config/reset";
+@import "font-awesome";
+@import "mixins/vender_prefix";
+@import "modules/flash";
+@import "modules/side-bar";
+@import "modules/chat";
+@import "modules/user";
+@import "messages/messages";
