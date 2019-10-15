@@ -77,4 +77,6 @@ gem 'erb2haml'
 
 # gem 'devise-i18n'
 
-gem 'font-awesome-sass', '~> 5.4.1'
+# gem 'font-awesome-sass', '~> 5.4.1'
+
+gem "font-awesome-rails"
