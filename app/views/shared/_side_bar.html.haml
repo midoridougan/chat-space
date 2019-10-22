@@ -12,13 +12,10 @@
 
   .groups
     .group
-      .group__name
-        = "sample"
-      .group__message
-        = "Hello work"
-    .group
-      .group__name
-        = "sample-group"
-      .group__message
-        = "Good bye work"
+      - current_user.group.each do |group|
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            = "メッセージはまだありません。"
         

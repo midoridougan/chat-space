@@ -30,16 +30,19 @@
   .groups {
     background-color: $navy;
     height: calc(100vw - 100px);
-    padding: 0 20px;
+    padding: 20px;
     .group {
       box-sizing: border-box; 
-      padding: 20px 0 40px;
+      paddng: 20px 0;
       &__name {
         font-size: $side_group_name;
+        color: $white;
       }
       &__message {
         font-size: $side_group_message;
         margin-top: 5px;
+        padding-bottom: 40px;
+        color: $white;
       }
     }
   }
