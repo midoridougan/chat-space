@@ -1,9 +1,7 @@
 .side-bar{
   box-sizing: border-box;
   color: $white;
-  height: 100%;
   width: 300px;
-  float: left;
   .header{
     background-color: $darknavy;
     height: 100px;
@@ -30,10 +28,10 @@
   .groups {
     background-color: $navy;
     height: calc(100vw - 100px);
-    padding: 20px;
+    padding: 0 20px;
     .group {
       box-sizing: border-box; 
-      paddng: 20px 0;
+      paddng: 20px 0 40px;
       &__name {
         font-size: $side_group_name;
         color: $white;
@@ -41,7 +39,6 @@
       &__message {
         font-size: $side_group_message;
         margin-top: 5px;
-        padding-bottom: 40px;
         color: $white;
       }
     }
