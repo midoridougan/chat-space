@@ -15,14 +15,14 @@
           = "Edit"
 
     .body
-      = render "messages"
+      = render 'messages'
 
     .form
-      .form-field
-        %ul.form__message
-          %li.list
-            = link_to do
-              = fa_icon 'image', class: 'icon'
-      .form-submit
-        .form-submit__btn
-          = "Send"
+      = form_for [@group, @message] do |f|
+        = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+        
