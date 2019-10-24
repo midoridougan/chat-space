@@ -15,7 +15,11 @@
           = "Edit"
 
     .body
+<<<<<<< Updated upstream
       = render 'messages'
+=======
+      = render partial: "messages", collection: @messages
+>>>>>>> Stashed changes
 
     .form
       = form_for [@group, @message] do |f|
