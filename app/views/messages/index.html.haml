@@ -15,7 +15,7 @@
           = "Edit"
 
     .body
-      = render 'messages'
+      = render partial: "messages", collection: @messages
 
     .form
       = form_for [@group, @message] do |f|
