@@ -27,15 +27,16 @@ RSpec.describe Message, type: :model do
       it 'is invalid without group_id' do
         message = build(:message, group_id: nil)
         message.valid?
+        binding.pry
         expect(message.errors[:group]).to include('を入力してください')
         # expect(message.errors[:group]).to eq ([])
       end
 
       it 'is invalid without user_id' do
         message = build(:message, user_id: nil)
-        binding.pry
+        # binding.pry
         message.valid?
-        binding.pry
+        # binding.pry
         expect(message.errors[:user]).to include('を入力してください')
         # expect(message.errors[:user]).to eq ([])
        
