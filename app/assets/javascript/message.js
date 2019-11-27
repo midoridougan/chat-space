@@ -1,25 +1,26 @@
 $(function(){
   function buildHTML(message){
-    var addImage = (message.image !== null) ? `<img class = "image_size", src="$(message.image)">` : ''
+    var image = (message.image) ? `<img class = "lower-message_image" src=${message.image}>` : '';
     
-    var html = `
-      <div class="messages">
-        <div class="upper-message">
-          <div class="upper-message__name">
-            ${message.user}
-          </div>
+    var html = `<div class="messages">
+                  <div class="upper-message">
+                    <div class="upper-message__name">
+                      ${message.user}
+                    </div>
 
-          <div class="upper-message__date">
-            ${message.time}
-          </div>
-        </div>
-        <div class="lower-message">
-          <div class="lower-message__message">
-            ${message.body}
-          </div>
-        </div>
-      </div>`
-    return html;
+                    <div class="upper-message__date">
+                      ${message.time}
+                    </div>
+                  </div>
+                  <div class="lower-message">
+                    <div class="lower-message__message">
+                    ${message.body}
+                    </div>
+                    ${image}
+                  </div>
+                </div> `
+
+    $ ('.messages').append(html);
   }
 
 
@@ -38,10 +39,22 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.body').append(html);
-      $('#message_body').val('')
+      $('#message_body').val('');
+      $('form')[0].reset();
+
+      funtion scrollBottom(){
+        var target = $('messages').last();
+        var position = target.offset().top + $('.messages').scrollTop();
+        $('.messages').animate({
+          scrollTop: position
+        }, 300, 'swing');
+      }
     })
     .fail(function(){
-      alert('error');
+      alert("メッセージ送信に失敗しました");
+    });
+    .always(function(data){
+      $('submit-btn').prop('disabled', false);
     })
   })
-});
+})
