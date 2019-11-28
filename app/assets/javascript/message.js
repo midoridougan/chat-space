@@ -39,7 +39,6 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.body').append(html);
-      $('#message_body').val('');
       $('form')[0].reset();
 
       funtion scrollBottom(){
