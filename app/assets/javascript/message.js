@@ -39,21 +39,12 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.body').append(html);
+      $('.body').animate({ scrollTop: $('.body')[0].scrollHeight }, 'fast');
       $('form')[0].reset();
-
-      funtion scrollBottom(){
-        var target = $('messages').last();
-        var position = target.offset().top + $('.messages').scrollTop();
-        $('.messages').animate({
-          scrollTop: position
-        }, 300, 'swing');
-      }
+      
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
     });
-    .always(function(data){
-      $('submit-btn').prop('disabled', false);
-    })
   })
 })
