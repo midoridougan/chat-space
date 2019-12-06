@@ -29,6 +29,7 @@
     background-color: $navy;
     height: calc(100vw - 100px);
     padding: 0 20px;
+    box-sizing: border-box;
 
     .group {
       box-sizing: border-box; 
