@@ -13,7 +13,7 @@
               = user.name
       .right-header
         .right-header__btn
-          = "Edit"
+          = link_to 'Edit', edit_group_path(@group),class: 'right-header_btn'
 
     .body
       = render partial: "messages", collection: @messages
