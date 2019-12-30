@@ -21,7 +21,7 @@ $(function(){
       </div>` 
     } else if (messages.body){
       var html = `
-      <div class="message" data-messages-id= ${messages.id} >
+      <div class="message" data-message-id= ${messages.id} >
         <div class="upper-message"> 
           <div class="upper-message__name"> 
             ${messages.user_name}
@@ -38,7 +38,7 @@ $(function(){
       </div>`
     } else if (messages.image) {
       var html = `
-      <div class="message" data-messages-id= ${messages.id} >
+      <div class="message" data-message-id= ${messages.id} >
         <div class="upper-message"> 
           <div class="upper-message__name"> 
             ${messages.user_name}
@@ -48,14 +48,14 @@ $(function(){
           </div> 
         </div> 
         <div class="lower-message">
-          <img src="${messages.image}" class="lower-message__image">
+         <img src="${messages.image}" class="lower-message__image">
         </div>
       </div>`
     };
     return html;
   };
   var reloadMessages = function() {
-    last_messages_id = $('.messages:last').data("messages-id");
+    last_messages_id = $('.message:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -69,7 +69,7 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         $('.body').append(insertHTML);
-        $('.body').animate({ scrollTop: $('.body')[0].scrollHeight});
+        $('.body').animate({ scrollTop: $('.body')[0].scrollHeight}, 1000);
         $("#new_message")[0].reset();
         $(".form__submit").prop("disabled", false);
       }
@@ -93,7 +93,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.body').append(html);
-      $('.body').animate({ scrollTop: $('.body')[0].scrollHeight}, 1000);
+      $('.body').animate({ scrollTop: $('.body')[0].scrollHeight});
       $('form')[0].reset();
     })
     .fail(function() {
