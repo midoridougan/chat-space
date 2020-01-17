@@ -9,8 +9,8 @@
         %ul.left-header__members
           Members : 
           %li.member
-            - @group.users.each do |user|
-              = user.name
+            - @group.groups_users.each do |groups_user|
+              = groups_user.user.name
       .right-header
         .right-header__btn
           = link_to 'Edit', edit_group_path(@group), class: 'right-header_btn'
