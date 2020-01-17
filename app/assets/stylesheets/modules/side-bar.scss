@@ -2,11 +2,15 @@
   box-sizing: border-box;
   color: $white;
   width: 300px;
+  bottom: 0;
+  
   .header{
     background-color: $darknavy;
     height: 100px;
     line-height: 100px;
     padding: 0 20px;
+    width: 260px;
+    position: fixed;
     &__name {
       font-size: $side_header_font;
       display: inline-block;

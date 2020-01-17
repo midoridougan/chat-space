@@ -1,14 +1,17 @@
 .chat-main {
   width: calc(100vw - 300px);
+  height: 100%;
   float: right;
   .header {
     box-sizing: border-box;  
     background-color: $lightwhite;
     height: 100px;
+    width: calc(100vw - 300px);
     padding: 0 40px;
+    position: fixed;
     .left-header {
       float: left;
-      position: fixed;
+    
       &__title {
         color: $black;
         font-size: 20px;
@@ -72,10 +75,13 @@
   }
 
   .form {
-    background-color: $gray;
+    background-color: $lightgray;
     box-sizing: border-box;
     height: 90px;
-    padding: 20px 50px 20px 40px;
+    width: calc(100vw - 300px);
+    padding: 20px 40px;
+    bottom: 0;
+    position: fixed;
     &__message {
       border: none;
       float: left;
